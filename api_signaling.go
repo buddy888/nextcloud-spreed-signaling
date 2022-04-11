@@ -646,6 +646,15 @@ type EventServerMessageSessionEntry struct {
 	RoomSessionId string           `json:"roomsessionid,omitempty"`
 }
 
+func (e *EventServerMessageSessionEntry) Clone() *EventServerMessageSessionEntry {
+	return &EventServerMessageSessionEntry{
+		SessionId:     e.SessionId,
+		UserId:        e.UserId,
+		User:          e.User,
+		RoomSessionId: e.RoomSessionId,
+	}
+}
+
 // MCU-related types
 
 type AnswerOfferMessage struct {
